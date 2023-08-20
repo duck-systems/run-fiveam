@@ -2,6 +2,10 @@
 
 Easily run FiveAM test suites from GitHub Actions.
 
+> [!WARNING]
+> This action is currently experimental. It is tested and working with SBCL on Linux runners and _should_ work on others,
+> but may or may not work with some implementations or operating systems.
+
 ## Getting Started
 
 Add a job like the following:
