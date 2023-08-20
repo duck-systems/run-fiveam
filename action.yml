@@ -16,16 +16,19 @@ runs:
   steps:
   # setup-lisp requires an env variable to be set, not matrix.lisp
     - name: Set LISP env var
+      shell: bash
       run: echo "LISP=${{ inputs.lisp }}" >> $GITHUB_ENV
 
     # Set up and cache Lisp install
     - name: Grant All Perms to Make Cache Restoring Possible
+      shell: bash
       run: |
         sudo mkdir -p /usr/local/etc/roswell
         sudo chown "${USER}" /usr/local/etc/roswell
         # Here the ros binary will be restored:
         sudo chown "${USER}" /usr/local/bin
     - name: Get Current Month
+      shell: bash
       id: current-month
       run: |
         echo "::set-output name=value::$(date -u '+%Y-%m')"
@@ -44,6 +47,7 @@ runs:
           .qlot
         key: "${{ steps.current-month.outputs.value }}-${{ env.cache-name }}-${{ runner.os }}-${{ inputs.lisp }}-${{ hashFiles('qlfile.lock') }}"
     - name: Restore Path To Cached Files
+      shell: bash
       run: |
         echo $HOME/.roswell/bin >> $GITHUB_PATH
         echo .qlot/bin >> $GITHUB_PATH
