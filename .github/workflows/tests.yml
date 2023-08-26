@@ -14,10 +14,11 @@ jobs:
     name: ${{ matrix.lisp }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       # Each combination of lisp and os are tested
       matrix:
         lisp: [sbcl-bin, ccl-bin, abcl-bin, clasp-bin, ecl]
-        os: [ubuntu-latest]   # [windows-latest, ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]   # [windows-latest]
 
     steps:
       # This action checks out our code in the working directory
