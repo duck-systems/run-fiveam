@@ -13,6 +13,7 @@ jobs:
   test:
     name: ${{ matrix.lisp }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       # Each combination of lisp and os are tested
