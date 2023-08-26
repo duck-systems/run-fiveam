@@ -18,7 +18,7 @@ jobs:
       fail-fast: false
       # Each combination of lisp and os are tested
       matrix:
-        lisp: [sbcl-bin, ccl-bin, abcl-bin, clasp-bin, ecl]
+        lisp: [sbcl-bin, ccl-bin, abcl-bin, ecl] # Clasp apparently not well supported by Roswell
         os: [ubuntu-latest, macOS-latest]   # [windows-latest]
 
     steps:
