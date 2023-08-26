@@ -26,5 +26,6 @@ jobs:
       # Test our action
       - uses: duck-systems/run-fiveam@main
         with:
+          lisp: ${{ matrix.lisp }}
           system: 'systems.duck.run-fiveam/test'
           tests: ':test-suite'
