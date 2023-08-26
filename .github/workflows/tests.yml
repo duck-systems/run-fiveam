@@ -15,8 +15,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       # Each combination of lisp and os are tested
-      matrix:                 # Support more later
-        lisp: [sbcl-bin]      # [sbcl-bin, ccl-bin]
+      matrix:
+        lisp: [sbcl-bin, ccl-bin, abcl-bin, clasp-bin, ecl]
         os: [ubuntu-latest]   # [windows-latest, ubuntu-latest, macOS-latest]
 
     steps:
